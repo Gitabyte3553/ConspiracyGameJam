@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dlgp74megu8q6"]
+
+[ext_resource type="Texture2D" uid="uid://cce3itvgjxscs" path="res://Sprites/Images/PlayertoSpaceship.png" id="1_umdap"]
+
+[node name="Node2D" type="Node2D" unique_id=421566804]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1645740961]
+texture_filter = 1
+position = Vector2(48, 48)
+texture = ExtResource("1_umdap")
