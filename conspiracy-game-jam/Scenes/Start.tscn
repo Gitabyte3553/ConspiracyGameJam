@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bubxidd7towlb"]
 
+[ext_resource type="Texture2D" uid="uid://bxnc6byffnvva" path="res://Sprites/Images/Startmenu.png" id="1_nt0jr"]
+[ext_resource type="FontFile" uid="uid://j8xf4heruuvy" path="res://Fonts/VCRosdNEUE.ttf" id="2_y4ycm"]
+
 [node name="Control" type="Control" unique_id=1872219302]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1784232729]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nt0jr")
+
+[node name="Label" type="Label" parent="." unique_id=725028643]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18229167
+anchor_top = 0.19791667
+anchor_right = 0.8177083
+anchor_bottom = 0.4375
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_y4ycm")
+text = "Area 67"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=553346420]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -4.0
+offset_right = 29.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1784202642]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y4ycm")
+theme_override_font_sizes/font_size = 4
+text = "PLAY"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=391691657]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y4ycm")
+theme_override_font_sizes/font_size = 4
+text = "SETTINGS"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=102413467]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y4ycm")
+theme_override_font_sizes/font_size = 4
+text = "CREDITS"

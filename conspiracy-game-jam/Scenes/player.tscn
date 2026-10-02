@@ -1,5 +1,147 @@
 [gd_scene format=3 uid="uid://cc8eo5xblobwl"]
 
-[node name="Player" type="CharacterBody2D" unique_id=454133777]
+[ext_resource type="Texture2D" uid="uid://cjbr82bgi4fre" path="res://Sprites/Animation/MiniPlayerSpritesheet.png" id="1_v0iea"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1759823173]
+[sub_resource type="GDScript" id="GDScript_r5iys"]
+resource_name = "Player.gd"
+script/source = "extends CharacterBody2D
+
+@onready var animationplayer: AnimationPlayer = $Sprite2D/AnimationPlayer
+
+@export var speed = 10
+
+func get_input():
+	var input_direction = Input.get_vector(\"ui_left\",\"ui_right\",\"ui_up\",\"ui_down\")
+	velocity = input_direction * speed
+	if input_direction.x < 0 :
+		animationplayer.play(\"Left\")
+	elif input_direction.x > 0:
+		animationplayer.play(\"Right\")
+	elif input_direction.y > 0:
+		animationplayer.play(\"Down\")
+	elif input_direction.y < 0:
+		animationplayer.play(\"Up\")
+	else:
+		animationplayer.stop()
+
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	pass # Replace with function body.
+"
+
+[sub_resource type="Animation" id="Animation_cvnsp"]
+resource_name = "Down"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "Left"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+resource_name = "Right"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_x3wgy"]
+resource_name = "new_animation"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3smsa"]
+_data = {
+&"Down": SubResource("Animation_cvnsp"),
+&"Left": SubResource("Animation_6t5aa"),
+&"RESET": SubResource("Animation_vgqql"),
+&"Right": SubResource("Animation_fkybt"),
+&"Up": SubResource("Animation_x3wgy")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ojbw0"]
+radius = 2.0
+height = 8.0
+
+[node name="Player" type="CharacterBody2D" unique_id=454133777]
+script = SubResource("GDScript_r5iys")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566390348]
+texture_filter = 1
+position = Vector2(49, 48)
+texture = ExtResource("1_v0iea")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1715174925]
+libraries/ = SubResource("AnimationLibrary_3smsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1074837745]
+position = Vector2(49, 48)
+shape = SubResource("CapsuleShape2D_ojbw0")
