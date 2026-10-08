@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://3l1te4pgruuw"]
+
+[ext_resource type="Texture2D" uid="uid://beendy0etlk25" path="res://Sprites/Images/tree2.png" id="1_hav0f"]
+[ext_resource type="Texture2D" uid="uid://c6b8wlu4rkxkj" path="res://Sprites/Images/tree1.png" id="2_qalo8"]
+[ext_resource type="Texture2D" uid="uid://briiyn2ers4w5" path="res://Sprites/Images/river.png" id="3_qalo8"]
+
+[node name="Node2D" type="Node2D" unique_id=516242074]
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=371651648]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=924127318]
+texture_filter = 1
+position = Vector2(48, 48)
+texture = ExtResource("1_hav0f")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=974882204]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1525595295]
+texture_filter = 1
+position = Vector2(48, 48)
+texture = ExtResource("2_qalo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1017922978]
+position = Vector2(48, 48)
+texture = ExtResource("3_qalo8")
