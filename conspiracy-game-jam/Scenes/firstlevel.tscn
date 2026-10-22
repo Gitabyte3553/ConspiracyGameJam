@@ -8,7 +8,7 @@
 [node name="Node2D" type="Node2D" unique_id=516242074]
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=371651648]
-scroll_scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.01, 0.01)
 repeat_size = Vector2(96, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=924127318]
@@ -17,7 +17,7 @@ position = Vector2(48, 48)
 texture = ExtResource("1_hav0f")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=974882204]
-scroll_scale = Vector2(0.4, 0.4)
+scroll_scale = Vector2(0.04, 0.04)
 repeat_size = Vector2(96, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1525595295]
@@ -26,6 +26,7 @@ position = Vector2(48, 48)
 texture = ExtResource("2_qalo8")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=548666199]
+scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(96, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1017922978]
@@ -33,7 +34,7 @@ position = Vector2(48, 48)
 texture = ExtResource("3_qalo8")
 
 [node name="CharacterBody2D" parent="." unique_id=1685075473 instance=ExtResource("4_judnc")]
-position = Vector2(3, 23)
+position = Vector2(3, 27)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1218252522]
-position = Vector2(45, 25)
+position = Vector2(45, 21)
