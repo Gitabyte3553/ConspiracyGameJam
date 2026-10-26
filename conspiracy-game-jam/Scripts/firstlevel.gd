@@ -23,8 +23,16 @@ func _process(_delta):
 		# RIGHT edge limit has been reached!
 		$AnimatedSprite2D.global_position = camera.global_position
 		$AnimatedSprite2D.visible = true
-		$AnimatedSprite2D.play("default")
-		print("showing")
+		
 	else:
 		$AnimatedSprite2D.visible = false
-		print("not_showing")
+	#print("not_showing")
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation == "default":
+		$AnimatedSprite2D.stop()
+
+
+func _on_animated_sprite_2d_visibility_changed() -> void:
+	$AnimatedSprite2D.play("default")
