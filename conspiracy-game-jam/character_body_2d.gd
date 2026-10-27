@@ -6,12 +6,13 @@ const JUMP_VELOCITY = -400.0
 @onready var animatedsprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func get_input():
-	var input_direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-	velocity = input_direction * SPEED
-	if input_direction.x < 0 :
-		
+	var direction = Input.get_axis("ui_left", "ui_right")
+	velocity.x = direction * SPEED
+	velocity.y = 0
+
+	if direction < 0:
 		animatedsprite.play("moving_left")
-	elif input_direction.x > 0:
+	elif direction > 0:
 		animatedsprite.flip_h = false
 		animatedsprite.play("default")
 	else:

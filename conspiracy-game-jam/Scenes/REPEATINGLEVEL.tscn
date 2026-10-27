@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dl20hoxmd1jk8"]
+
+[node name="Node2D" type="Node2D" unique_id=1867263907]
+
+[node name="Control" type="Control" parent="." unique_id=830727994]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=456913785]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.4
+anchor_bottom = 2.4
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control" unique_id=1814565891]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1.0
+offset_top = 24.0
+offset_right = 56.0
+offset_bottom = 73.0
+grow_horizontal = 2
+text = "DAY 1
+Cenote"
+horizontal_alignment = 1

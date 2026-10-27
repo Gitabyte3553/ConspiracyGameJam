@@ -8,7 +8,9 @@ extends Node2D
 var parallax1_limit_end_x = 6000
 var parallax1_limit_end_y = 10000000
 
-
+func _ready():
+	Transition.transition()
+	await Transition.on_transition_finished
 func _process(_delta):
 	# Get the active viewport's size (essential because limits stop when the screen edge hits them)
 	var viewport_size = get_viewport_rect().size
@@ -32,6 +34,9 @@ func _process(_delta):
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "default":
 		$AnimatedSprite2D.stop()
+		Transition.transition()
+		await Transition.on_transition_finished
+		get_tree().change_scene_to_file("res://Scenes/REPEATINGLEVEL.tscn")
 
 
 func _on_animated_sprite_2d_visibility_changed() -> void:

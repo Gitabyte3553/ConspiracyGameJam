@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d1hvyhemjf0tn"]
+
+[ext_resource type="FontFile" uid="uid://j8xf4heruuvy" path="res://Fonts/VCRosdNEUE.ttf" id="1_riboh"]
+[ext_resource type="Script" uid="uid://cshhnu4ji0bxj" path="res://Scripts/skipbutton.gd" id="2_r6yi2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kq2p8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r837"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control" unique_id=401347825]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_r6yi2")
+
+[node name="Button" type="Button" parent="." unique_id=283579334]
+texture_filter = 1
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 24.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("1_riboh")
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_kq2p8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5r837")
+text = "SKIP >>"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
