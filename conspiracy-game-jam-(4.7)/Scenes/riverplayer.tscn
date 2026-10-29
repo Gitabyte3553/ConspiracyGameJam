@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bd3mpnk18tvsb"]
+
+[ext_resource type="Script" uid="uid://gxx00kxs3pp4" path="res://character_body_2d.gd" id="1_m487x"]
+[ext_resource type="Texture2D" uid="uid://b5kiq2dschx6c" path="res://Sprites/Images/raftingplayer.png" id="2_m487x"]
+[ext_resource type="Texture2D" uid="uid://dtso8manoay3l" path="res://Sprites/Images/raftingplayerright.png" id="3_8u2y0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m487x"]
+atlas = ExtResource("2_m487x")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u2y0"]
+atlas = ExtResource("2_m487x")
+region = Rect2(32, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k2sd"]
+atlas = ExtResource("2_m487x")
+region = Rect2(64, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mskj3"]
+atlas = ExtResource("2_m487x")
+region = Rect2(96, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfrae"]
+atlas = ExtResource("3_8u2y0")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw28v"]
+atlas = ExtResource("3_8u2y0")
+region = Rect2(32, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2ja2"]
+atlas = ExtResource("3_8u2y0")
+region = Rect2(64, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8qbo"]
+atlas = ExtResource("3_8u2y0")
+region = Rect2(96, 0, 32, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfrae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m487x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u2y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k2sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mskj3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfrae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw28v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2ja2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8qbo")
+}],
+"loop": 1,
+"name": &"moving_left",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1685075473]
+script = ExtResource("1_m487x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1529545553]
+position = Vector2(46, 53)
+sprite_frames = SubResource("SpriteFrames_jfrae")
+animation = &"moving_left"
