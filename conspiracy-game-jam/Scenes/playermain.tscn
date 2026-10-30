@@ -126,7 +126,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w2g2x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -137,7 +137,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2e2fh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -160,7 +160,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2g1ck")
 }],
-"loop": true,
+"loop": 1,
 "name": &"megajump",
 "speed": 5.0
 }, {
@@ -189,7 +189,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xt0yb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 8.0
 }]
@@ -205,8 +205,9 @@ JUMP_FORCE = 200
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2136650432]
 position = Vector2(33, 35)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"idle"
+animation = &"megajump"
 autoplay = "idle"
+frame_progress = 0.41895324
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239128757]
 position = Vector2(33, 44)

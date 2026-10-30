@@ -36,7 +36,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		$AnimatedSprite2D.stop()
 		Transition.transition()
 		await Transition.on_transition_finished
-		get_tree().change_scene_to_file("res://Scenes/REPEATINGLEVEL.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Tutorial/tutorial.tscn")
 
 
 func _on_animated_sprite_2d_visibility_changed() -> void:

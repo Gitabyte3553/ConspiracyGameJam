@@ -29,9 +29,10 @@ func _physics_process(delta):
 		coyote_timer.stop()
 		anim.play("jump")
 	elif Input.is_action_just_pressed("superjump") and can_jump:
+		anim.play("megajump")
 		velocity.y = -JUMP_FORCE * 1.5 
 		coyote_timer.stop()
-		anim.play("megajump")
+		
 
 	if is_on_floor():
 		if direction != 0:
